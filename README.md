@@ -4,6 +4,10 @@ Import & use javascript libraries in your flutter web projects.
 
 Created to make it simpler to build Flutter Plugins compatible with web.
 
+# Example
+
+to include [howler.js](https://github.com/goldfire/howler.js) & use it in a flutter web project :
+
 1. Add the js library in your assets
 2. Declare it inside your pubspec.yaml
 
