@@ -2,18 +2,17 @@ import 'dart:async';
 import 'dart:html' as html;
 
 class ImportJsLibraryWeb {
-
   /// Injects the library by its [url]
   static Future<void> import(String url) {
     return _importJSLibraries([url]);
   }
 
-  static html.ScriptElement _createScriptTag(String library){
+  static html.ScriptElement _createScriptTag(String library) {
     final html.ScriptElement script = html.ScriptElement()
       ..type = "text/javascript"
       ..charset = "utf-8"
       ..async = true
-    //..defer = true
+      //..defer = true
       ..src = library;
     return script;
   }
@@ -25,7 +24,7 @@ class ImportJsLibraryWeb {
     final head = html.querySelector('head');
 
     libraries.forEach((String library) {
-      if(!isImported(library)) {
+      if (!isImported(library)) {
         final scriptTag = _createScriptTag(library);
         head.children.add(scriptTag);
         loading.add(scriptTag.onLoad.first);
@@ -35,8 +34,8 @@ class ImportJsLibraryWeb {
     return Future.wait(loading);
   }
 
-  static bool _isLoaded(html.Element head, String url){
-    if(url.startsWith("./")) {
+  static bool _isLoaded(html.Element head, String url) {
+    if (url.startsWith("./")) {
       url = url.replaceFirst("./", "");
     }
     for (var element in head.children) {
@@ -49,9 +48,8 @@ class ImportJsLibraryWeb {
     return false;
   }
 
-  static bool isImported(String url){
+  static bool isImported(String url) {
     final head = html.querySelector('head');
     return _isLoaded(head, url);
   }
 }
-

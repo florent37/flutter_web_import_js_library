@@ -26,10 +26,30 @@ class ImportJsLibrary {
   }
 }
 
-void importJsLibrary(String url) {
-  ImportJsLibrary.import(url);
+String _libraryUrl(String url, String pluginName){
+  if(url.startsWith("./")) {
+    url = url.replaceFirst("./", "");
+    return "./assets/packages/$pluginName/$url";
+  }
+  if(url.startsWith("assets/")) {
+    return "./assets/packages/$pluginName/$url";
+  } else {
+    return url;
+  }
 }
 
-bool isJsLibraryImported(String url) {
-  return ImportJsLibrary.isImported(url);
+void importJsLibrary({String url, String pluginName}) {
+  if(pluginName == null) {
+    ImportJsLibrary.import(url);
+  } else if(assets.startsWith("./assets/") || assets.startsWith("assets/")){
+    ImportJsLibrary.import(_libraryUrl(url, packageName));
+  }
+}
+
+bool isJsLibraryImported(String url, {String pluginName}) {
+  if(pluginName == null) {
+    return ImportJsLibrary.isImported(url);
+  } else {
+    return ImportJsLibrary.isImported(_libraryUrl(url, packageName));
+  }
 }

@@ -8,8 +8,16 @@ Created to make it simpler to build Flutter Plugins compatible with web.
 
 to include [howler.js](https://github.com/goldfire/howler.js) & use it in a flutter web project :
 
-1. Add the js library in your assets
-2. Declare it inside your pubspec.yaml
+1. Create your plugin Package
+
+```sh
+flutter create --template=package audio_plugin
+```
+
+Then
+
+2. Add the js library in your assets
+3. Declare it inside your pubspec.yaml
 
 ```dart
 flutter:
@@ -17,18 +25,28 @@ flutter:
     - assets/howler.js
 ```
 
-3. Anywhere in your Flutter project, import this js lib
+3. In your Flutter plugin project, import this js lib
  
-For example, on the main.dart
+For example, on the registerWith()
 
 ```dart
-void main() {
-  importJsLibrary("./assets/howler.js");
-  runApp(MyApp());
-}
-```
+class AudioPlugin {
 
-You can also import it later in a custom class.
+  static void registerWith(Registrar registrar) {
+    final MethodChannel channel = MethodChannel(
+      'audio_plugin',
+      const StandardMethodCodec(),
+      registrar.messenger,
+    );
+
+    importJsLibrary(url: "./assets/howler.js", pluginName: "audio_plugin_example");
+    
+    final AudioPlugin instance = AudioPlugin();
+    channel.setMethodCallHandler(instance.handleMethodCall);
+  }
+   
+  ...
+```
 
 4. Using [package:js](https://pub.dev/packages/js), wrap your js methods/classes
 
@@ -52,6 +70,35 @@ class Howl {
 final audio = Howl(src: ["./assets/astronomia.mp3"]);
 audio.play();
 ```
+
+for example in the plugin
+
+```dart
+
+  Howl audio;
+
+  Future<dynamic> handleMethodCall(MethodCall call) async {
+    print(call.method);
+    switch (call.method) {
+      case "play":
+        if(audio != null){
+          audio.play();
+        }
+        break;
+      case "pause":
+        if(audio != null){
+          audio.pause();
+        }
+        break;
+      case "open":
+        final String path = call.arguments["path"];
+        audio = Howl(src: [path]);
+        break;
+    }
+  }
+```
+
+
 
 
 

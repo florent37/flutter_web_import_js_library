@@ -10,10 +10,6 @@ import 'howl.dart';
 /// Web AudioPlugin
 class AudioPlugin {
 
-  AudioPlugin(){
-    importJsLibrary("./assets/packages/audio_plugin_example/assets/howler.js");
-  }
-
   static void registerWith(Registrar registrar) {
     final MethodChannel channel = MethodChannel(
       'audio_plugin',
@@ -21,43 +17,30 @@ class AudioPlugin {
       registrar.messenger,
     );
 
+    importJsLibrary(url: "./assets/howler.js", pluginName: "audio_plugin_example");
+
     final AudioPlugin instance = AudioPlugin();
     channel.setMethodCallHandler(instance.handleMethodCall);
   }
 
-  Howl howl;
-
-  void open(String path){
-    howl = Howl(src: [path]);
-  }
-
-  void play(){
-    if(howl != null){
-      howl.play();
-    }
-  }
-
-  void pause(){
-    if(howl != null){
-      howl.pause();
-    }
-  }
+  Howl audio;
 
   Future<dynamic> handleMethodCall(MethodCall call) async {
     print(call.method);
     switch (call.method) {
       case "play":
-        play();
-        return Future.value(true);
+        if(audio != null){
+          audio.play();
+        }
         break;
       case "pause":
-        pause();
-        return Future.value(true);
+        if(audio != null){
+          audio.pause();
+        }
         break;
       case "open":
         final String path = call.arguments["path"];
-        open(path);
-        return Future.value(true);
+        audio = Howl(src: [path]);
         break;
     }
   }
