@@ -40,7 +40,7 @@ class Howl {
 
   external play();
 }
-``
+```
 
 5. Use your library !
 

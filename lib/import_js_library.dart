@@ -19,8 +19,6 @@ class ImportJsLibrary {
       return false;
     }
   }
-
-  static void registerWith(registrarFor) {}
 }
 
 void importJsLibrary(String url) {
