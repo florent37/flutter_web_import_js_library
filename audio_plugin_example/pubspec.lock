@@ -8,13 +8,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.1"
-  audio_plugin_example:
-    dependency: "direct main"
-    description:
-      path: "../audio_plugin_example"
-      relative: true
-    source: path
-    version: "0.0.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -54,7 +47,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_web_plugins:
-    dependency: transitive
+    dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -66,14 +59,14 @@ packages:
     source: hosted
     version: "0.14.0+3"
   import_js_library:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
     version: "0.0.1"
   js:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: js
       url: "https://pub.dartlang.org"
