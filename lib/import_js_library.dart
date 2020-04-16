@@ -26,12 +26,12 @@ class ImportJsLibrary {
   }
 }
 
-String _libraryUrl(String url, String pluginName){
-  if(url.startsWith("./")) {
+String _libraryUrl(String url, String pluginName) {
+  if (url.startsWith("./")) {
     url = url.replaceFirst("./", "");
     return "./assets/packages/$pluginName/$url";
   }
-  if(url.startsWith("assets/")) {
+  if (url.startsWith("assets/")) {
     return "./assets/packages/$pluginName/$url";
   } else {
     return url;
@@ -39,7 +39,7 @@ String _libraryUrl(String url, String pluginName){
 }
 
 void importJsLibrary({String url, String flutterPluginName}) {
-  if(flutterPluginName == null) {
+  if (flutterPluginName == null) {
     ImportJsLibrary.import(url);
   } else {
     ImportJsLibrary.import(_libraryUrl(url, flutterPluginName));
@@ -47,7 +47,7 @@ void importJsLibrary({String url, String flutterPluginName}) {
 }
 
 bool isJsLibraryImported(String url, {String flutterPluginName}) {
-  if(flutterPluginName == null) {
+  if (flutterPluginName == null) {
     return ImportJsLibrary.isImported(url);
   } else {
     return ImportJsLibrary.isImported(_libraryUrl(url, flutterPluginName));

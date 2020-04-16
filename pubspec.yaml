@@ -1,6 +1,6 @@
 name: import_js_library
 description: Import & use javascript libraries in your flutter web projects
-version: 0.0.2
+version: 0.0.2+1
 author: Florent Champigny <champigny.florent@gmail.com>
 homepage: https://github.com/florent37/import_js_plugin
 
@@ -14,6 +14,7 @@ dependencies:
   html: ^0.14.0+3
   flutter_web_plugins:
     sdk: flutter
+  js: ^0.6.0
 
 dev_dependencies:
   flutter_test:
