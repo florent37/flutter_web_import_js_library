@@ -38,18 +38,18 @@ String _libraryUrl(String url, String pluginName){
   }
 }
 
-void importJsLibrary({String url, String pluginName}) {
-  if(pluginName == null) {
+void importJsLibrary({String url, String flutterPluginName}) {
+  if(flutterPluginName == null) {
     ImportJsLibrary.import(url);
-  } else if(assets.startsWith("./assets/") || assets.startsWith("assets/")){
-    ImportJsLibrary.import(_libraryUrl(url, packageName));
+  } else {
+    ImportJsLibrary.import(_libraryUrl(url, flutterPluginName));
   }
 }
 
-bool isJsLibraryImported(String url, {String pluginName}) {
-  if(pluginName == null) {
+bool isJsLibraryImported(String url, {String flutterPluginName}) {
+  if(flutterPluginName == null) {
     return ImportJsLibrary.isImported(url);
   } else {
-    return ImportJsLibrary.isImported(_libraryUrl(url, packageName));
+    return ImportJsLibrary.isImported(_libraryUrl(url, flutterPluginName));
   }
 }
