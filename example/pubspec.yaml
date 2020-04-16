@@ -1,0 +1,31 @@
+name: injectjsplugin_example
+description: Demonstrates how to use the injectjsplugin plugin.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  audio_plugin_example:
+    # When depending on this package from a real application you should use:
+    #   injectjsplugin: ^x.y.z
+    # See https://dart.dev/tools/pub/dependencies#version-constraints
+    # The example app is bundled with the plugin so we use a path dependency on
+    # the parent directory to use the current plugin's version.
+    path: ../audio_plugin_example/
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/test.mp3
+    - assets/astronomia.mp3
