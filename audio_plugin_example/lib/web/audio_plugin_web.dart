@@ -17,7 +17,7 @@ class AudioPlugin {
       registrar.messenger,
     );
 
-    importJsLibrary(url: "./assets/howler.js", pluginName: "audio_plugin_example");
+    importJsLibrary(url: "./assets/howler.js", flutterPluginName: "audio_plugin_example");
 
     final AudioPlugin instance = AudioPlugin();
     channel.setMethodCallHandler(instance.handleMethodCall);
