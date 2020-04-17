@@ -2,22 +2,49 @@
 
 Import & use javascript libraries in your flutter web projects.
 
-Created to make it simpler to build Flutter Plugins compatible with web.
+```dart
+flutter:
+  assets:
+    - assets/howler.js
+```
 
-# Example
+```dart
+importJsLibrary(url: "./assets/howler.js", flutterPluginName: "audio_plugin_example");
+```
 
-to include [howler.js](https://github.com/goldfire/howler.js) & use it in a flutter web project :
+# Why
 
-1. Create your plugin Package
+[![meme](./meme/meme_pc_grid.png)]()
+
+Audio library compatible with Flutter Web : https://pub.dev/packages/assets_audio_player
+
+[![meme](./meme/meme_idea_quote.png)]()
+
+Howler.js Audio library for the modern web : https://howlerjs.com/
+
+[![meme](./meme/meme_challenge_accepted.png)]()
+
+And after weeks, month, years, eternity later....
+
+[![meme](./meme/eternity_success.png)]()
+
+# How to use it
+
+## 1. Create your plugin Package
+
+https://flutter.dev/docs/development/packages-and-plugins/developing-packages
 
 ```sh
 flutter create --template=package audio_plugin_example
 ```
 
-Then
+## 2. Add the js library in your assets
 
-2. Add the js library in your assets
-3. Declare it inside your pubspec.yaml
+Downloaded from https://github.com/goldfire/howler.js/tree/master/dist
+
+[![meme](./medias/add_into_assets.png)]()
+
+## 3. Declare it inside your pubspec.yaml
 
 ```dart
 flutter:
@@ -25,11 +52,20 @@ flutter:
     - assets/howler.js
 ```
 
-3. In your Flutter plugin project, import this js lib
- 
+## 4. Import import_js_plugin
+
+```
+dependencies:
+  import_js_library: ^1.0.0
+```
+
+## 5. In your Flutter plugin project, import your .js lib
+
 For example, on the registerWith()
 
 pluginName: the name of your plugin, based on pubspecs.yaml, here `audio_plugin_example`
+
+Using the method `importJsLibrary(url: `PATH_OF_JS`, flutterPluginName: `NAME_OF_FLUTTER_PLUGIN`);`
 
 ```dart
 class AudioPlugin {
@@ -41,7 +77,7 @@ class AudioPlugin {
       registrar.messenger,
     );
 
-    importJsLibrary(url: "./assets/howler.js", pluginName: "audio_plugin_example");
+    importJsLibrary(url: "./assets/howler.js", flutterPluginName: "audio_plugin_example");
     
     final AudioPlugin instance = AudioPlugin();
     channel.setMethodCallHandler(instance.handleMethodCall);
@@ -50,7 +86,7 @@ class AudioPlugin {
   ...
 ```
 
-4. Using [package:js](https://pub.dev/packages/js), wrap your js methods/classes
+## 6. Using [package:js](https://pub.dev/packages/js), wrap your js methods/classes
 
 ```dart
 @JS()
@@ -66,7 +102,7 @@ class Howl {
 }
 ```
 
-5. Use your library !
+## 7. Use your library !
 
 ```dart
 final audio = Howl(src: ["./assets/astronomia.mp3"]);
