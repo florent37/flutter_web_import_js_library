@@ -65,6 +65,8 @@ For example, on the registerWith()
 
 pluginName: the name of your plugin, based on pubspecs.yaml, here `audio_plugin_example`
 
+Using the method `importJsLibrary(url: `PATH_OF_JS`, flutterPluginName: `NAME_OF_FLUTTER_PLUGIN`);`
+
 ```dart
 class AudioPlugin {
 
@@ -75,7 +77,7 @@ class AudioPlugin {
       registrar.messenger,
     );
 
-    importJsLibrary(url: "./assets/howler.js", pluginName: "audio_plugin_example");
+    importJsLibrary(url: "./assets/howler.js", flutterPluginName: "audio_plugin_example");
     
     final AudioPlugin instance = AudioPlugin();
     channel.setMethodCallHandler(instance.handleMethodCall);
