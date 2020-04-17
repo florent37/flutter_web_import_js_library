@@ -3,7 +3,7 @@
 # Run `pod lib lint pluginexample.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'pluginexample'
+  s.name             = 'audio_plugin_example'
   s.version          = '0.0.1'
   s.summary          = 'A sample to demonstrate the usage of import_js_library'
   s.description      = <<-DESC
