@@ -136,10 +136,14 @@ for example in the plugin
   }
 ```
 
+# Concrete use-case
 
+`import_js_library" is used to import & wrap Howl.js for the library https://pub.dev/packages/flutter_web_howl
 
+And [flutter_web_howl](https://github.com/florent37/flutter_web_howl) is included inside Assets Audio Player to handle the features on flutter web
 
+https://pub.dev/packages/assets_audio_player
 
-
+https://github.com/florent37/Flutter-AssetsAudioPlayer/blob/master/lib/assets_audio_player_web.dart
 
 
