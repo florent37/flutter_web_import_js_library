@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_web_plugins/src/plugin_registry.dart';
 
 import 'import_js_library_web.dart';
 
@@ -21,8 +20,8 @@ class ImportJsLibrary {
     }
   }
 
-  static void registerWith(Registrar registrarFor) {
-    //no-op
+  static registerWith(dynamic _){
+    // useful for flutter registrar
   }
 }
 
