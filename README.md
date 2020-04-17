@@ -43,9 +43,17 @@ flutter create --template=package audio_plugin_example
 </p>
 </details> 
 
-Then
+<details>
+<summary>2. Add the js library in your assets</summary>
+<p>
 
-2. Add the js library in your assets
+Downloaded from https://github.com/goldfire/howler.js/tree/master/dist
+
+[![meme](./medias/add_into_assets.png)]()
+
+</p>
+</details> 
+
 3. Declare it inside your pubspec.yaml
 
 ```dart
