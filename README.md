@@ -62,8 +62,15 @@ flutter:
     - assets/howler.js
 ```
 
-3. In your Flutter plugin project, import this js lib
- 
+4. Import import_js_plugin
+
+```
+dependencies:
+  import_js_library: ^1.0.0
+```
+
+5. In your Flutter plugin project, import your .js lib
+
 For example, on the registerWith()
 
 pluginName: the name of your plugin, based on pubspecs.yaml, here `audio_plugin_example`
@@ -87,7 +94,7 @@ class AudioPlugin {
   ...
 ```
 
-4. Using [package:js](https://pub.dev/packages/js), wrap your js methods/classes
+6. Using [package:js](https://pub.dev/packages/js), wrap your js methods/classes
 
 ```dart
 @JS()
