@@ -30,9 +30,7 @@ And after weeks, month, years, eternity later....
 
 # How to use it
 
-<details>
-<summary>1. Create your plugin Package</summary>
-<p>
+## 1. Create your plugin Package
 
 https://flutter.dev/docs/development/packages-and-plugins/developing-packages
 
@@ -40,21 +38,13 @@ https://flutter.dev/docs/development/packages-and-plugins/developing-packages
 flutter create --template=package audio_plugin_example
 ```
 
-</p>
-</details> 
-
-<details>
-<summary>2. Add the js library in your assets</summary>
-<p>
+## 2. Add the js library in your assets
 
 Downloaded from https://github.com/goldfire/howler.js/tree/master/dist
 
 [![meme](./medias/add_into_assets.png)]()
 
-</p>
-</details> 
-
-3. Declare it inside your pubspec.yaml
+## 3. Declare it inside your pubspec.yaml
 
 ```dart
 flutter:
@@ -62,14 +52,14 @@ flutter:
     - assets/howler.js
 ```
 
-4. Import import_js_plugin
+## 4. Import import_js_plugin
 
 ```
 dependencies:
   import_js_library: ^1.0.0
 ```
 
-5. In your Flutter plugin project, import your .js lib
+## 5. In your Flutter plugin project, import your .js lib
 
 For example, on the registerWith()
 
@@ -94,7 +84,7 @@ class AudioPlugin {
   ...
 ```
 
-6. Using [package:js](https://pub.dev/packages/js), wrap your js methods/classes
+## 6. Using [package:js](https://pub.dev/packages/js), wrap your js methods/classes
 
 ```dart
 @JS()
@@ -110,7 +100,7 @@ class Howl {
 }
 ```
 
-5. Use your library !
+## 7. Use your library !
 
 ```dart
 final audio = Howl(src: ["./assets/astronomia.mp3"]);
