@@ -28,14 +28,20 @@ And after weeks, month, years, eternity later....
 
 [![meme](./meme/eternity_success.png)]()
 
-# Example
+# How to use it
 
+<details>
+<summary>1. Create your plugin Package</summary>
+<p>
 
-1. Create your plugin Package
+https://flutter.dev/docs/development/packages-and-plugins/developing-packages
 
 ```sh
 flutter create --template=package audio_plugin_example
 ```
+
+</p>
+</details> 
 
 Then
 
