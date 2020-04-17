@@ -20,10 +20,14 @@ Audio library compatible with Flutter Web : https://pub.dev/packages/assets_audi
 
 [![meme](./meme/meme_idea_quote.png)]()
 
-Howler.js : https://howlerjs.com/
+Howler.js Audio library for the modern web : https://howlerjs.com/
 
+[![meme](./meme/meme_challenge_accepted.png)]()
 
-Created to make it simpler to build Flutter Plugins compatible with web.
+And after weeks, month, years, eternity later....
+
+[![meme](./meme/meme_eternity_later.png)]()
+
 
 # Example
 
