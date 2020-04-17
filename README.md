@@ -2,11 +2,34 @@
 
 Import & use javascript libraries in your flutter web projects.
 
+```dart
+flutter:
+  assets:
+    - assets/howler.js
+```
+
+```dart
+importJsLibrary(url: "./assets/howler.js", flutterPluginName: "audio_plugin_example");
+```
+
+# Why
+
+Le me trying to create an [audio library compatible with Flutter Web](https://pub.dev/packages/assets_audio_player)
+
+[![meme](./memes/meme_pc_quote.png)]()
+
+[![meme](./memes/meme_pc_facepalm_quote.png)]()
+
+[![meme](./memes/meme_idea_quote.png)]()
+
+Howler.js : https://howlerjs.com/
+
+
+
 Created to make it simpler to build Flutter Plugins compatible with web.
 
 # Example
 
-to include [howler.js](https://github.com/goldfire/howler.js) & use it in a flutter web project :
 
 1. Create your plugin Package
 
