@@ -28,6 +28,8 @@ And after weeks, month, years, eternity later....
 
 [![meme](./meme/meme_eternity_later.png)]()
 
+[![meme](./meme/meme_kid_success.jpg]()
+
 
 # Example
 
