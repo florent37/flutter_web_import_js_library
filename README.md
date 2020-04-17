@@ -56,7 +56,7 @@ flutter:
 
 ```
 dependencies:
-  import_js_library: ^1.0.0
+  import_js_library: ^1.0.1
 ```
 
 ## 5. In your Flutter plugin project, import your .js lib
