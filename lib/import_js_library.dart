@@ -20,7 +20,7 @@ class ImportJsLibrary {
     }
   }
 
-  static registerWith(dynamic _){
+  static registerWith(dynamic _) {
     // useful for flutter registrar
   }
 }
