@@ -16,7 +16,7 @@ importJsLibrary(url: "./assets/howler.js", flutterPluginName: "audio_plugin_exam
 
 [![meme](./meme/meme_pc_grid.png)]()
 
-Audio library compatible with Flutter Web : (https://pub.dev/packages/assets_audio_player
+Audio library compatible with Flutter Web : https://pub.dev/packages/assets_audio_player
 
 [![meme](./meme/meme_idea_quote.png)]()
 
