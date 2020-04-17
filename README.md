@@ -16,11 +16,11 @@ importJsLibrary(url: "./assets/howler.js", flutterPluginName: "audio_plugin_exam
 
 Le me trying to create an [audio library compatible with Flutter Web](https://pub.dev/packages/assets_audio_player)
 
-[![meme](./memes/meme_pc_quote.png)]()
+[![meme](./meme/meme_pc_quote.png)]()
 
-[![meme](./memes/meme_pc_facepalm_quote.png)]()
+[![meme](./meme/meme_pc_facepalm_quote.png)]()
 
-[![meme](./memes/meme_idea_quote.png)]()
+[![meme](./meme/meme_idea_quote.png)]()
 
 Howler.js : https://howlerjs.com/
 
