@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Fixed Android build error by removing `android` directory, which was not required anymore.
+
 ## 1.0.1
 
 * Added no-op for android & ios to fix import & avoid pod error
