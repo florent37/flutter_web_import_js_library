@@ -5,9 +5,9 @@
 Pod::Spec.new do |s|
   s.name             = 'pluginexample'
   s.version          = '0.0.1'
-  s.summary          = 'A sample to demonstrate the usage of import_js_library'
+  s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC
-A sample to demonstrate the usage of import_js_library
+A new flutter plugin project.
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }

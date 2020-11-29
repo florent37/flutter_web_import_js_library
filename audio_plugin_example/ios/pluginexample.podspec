@@ -3,11 +3,11 @@
 # Run `pod lib lint pluginexample.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'audio_plugin_example'
+  s.name             = 'pluginexample'
   s.version          = '0.0.1'
-  s.summary          = 'A sample to demonstrate the usage of import_js_library'
+  s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC
-A sample to demonstrate the usage of import_js_library
+A new flutter plugin project.
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
@@ -17,7 +17,7 @@ A sample to demonstrate the usage of import_js_library
   s.dependency 'Flutter'
   s.platform = :ios, '8.0'
 
-  # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
+  # Flutter.framework does not contain a i386 slice.
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
 end
