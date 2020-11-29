@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:html';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
@@ -9,7 +8,6 @@ import 'howl.dart';
 
 /// Web AudioPlugin
 class AudioPlugin {
-
   static void registerWith(Registrar registrar) {
     final MethodChannel channel = MethodChannel(
       'audio_plugin',
@@ -17,7 +15,8 @@ class AudioPlugin {
       registrar.messenger,
     );
 
-    importJsLibrary(url: "./assets/howler.js", flutterPluginName: "audio_plugin_example");
+    importJsLibrary(
+        url: "./assets/howler.js", flutterPluginName: "audio_plugin_example");
 
     final AudioPlugin instance = AudioPlugin();
     channel.setMethodCallHandler(instance.handleMethodCall);
@@ -29,12 +28,12 @@ class AudioPlugin {
     print(call.method);
     switch (call.method) {
       case "play":
-        if(audio != null){
+        if (audio != null) {
           audio.play();
         }
         break;
       case "pause":
-        if(audio != null){
+        if (audio != null) {
           audio.pause();
         }
         break;

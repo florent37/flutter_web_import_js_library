@@ -37,7 +37,7 @@ String _libraryUrl(String url, String pluginName) {
   }
 }
 
-void importJsLibrary({String url, String flutterPluginName}) {
+void importJsLibrary({required String url, String? flutterPluginName}) {
   if (flutterPluginName == null) {
     ImportJsLibrary.import(url);
   } else {
@@ -45,7 +45,7 @@ void importJsLibrary({String url, String flutterPluginName}) {
   }
 }
 
-bool isJsLibraryImported(String url, {String flutterPluginName}) {
+bool isJsLibraryImported(String url, {String? flutterPluginName}) {
   if (flutterPluginName == null) {
     return ImportJsLibrary.isImported(url);
   } else {

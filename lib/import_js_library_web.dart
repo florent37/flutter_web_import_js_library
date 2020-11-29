@@ -26,7 +26,7 @@ class ImportJsLibraryWeb {
     libraries.forEach((String library) {
       if (!isImported(library)) {
         final scriptTag = _createScriptTag(library);
-        head.children.add(scriptTag);
+        head!.children.add(scriptTag);
         loading.add(scriptTag.onLoad.first);
       }
     });
@@ -49,7 +49,7 @@ class ImportJsLibraryWeb {
   }
 
   static bool isImported(String url) {
-    final head = html.querySelector('head');
+    final head = html.querySelector('head')!;
     return _isLoaded(head, url);
   }
 }

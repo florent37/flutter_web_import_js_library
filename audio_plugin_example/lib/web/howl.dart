@@ -30,7 +30,8 @@ class Howl {
 
   double get duration => howl.duration;
 
-  void on(String event, Function callback) => howl.on(event, allowInterop(callback));
+  void on(String event, Function callback) =>
+      howl.on(event, allowInterop(callback));
 
   void onLoad(Function(dynamic id) callback) => on("load", (id, _) {
         callback(id); //exclude the second param
