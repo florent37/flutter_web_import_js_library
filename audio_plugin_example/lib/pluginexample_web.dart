@@ -32,7 +32,8 @@ class PluginexampleWeb {
       default:
         throw PlatformException(
           code: 'Unimplemented',
-          details: 'pluginexample for web doesn\'t implement \'${call.method}\'',
+          details:
+              'pluginexample for web doesn\'t implement \'${call.method}\'',
         );
     }
   }

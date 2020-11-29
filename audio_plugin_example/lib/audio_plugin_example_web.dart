@@ -32,7 +32,8 @@ class AudioPluginExampleWeb {
       default:
         throw PlatformException(
           code: 'Unimplemented',
-          details: 'audio_plugin_example for web doesn\'t implement \'${call.method}\'',
+          details:
+              'audio_plugin_example for web doesn\'t implement \'${call.method}\'',
         );
     }
   }
